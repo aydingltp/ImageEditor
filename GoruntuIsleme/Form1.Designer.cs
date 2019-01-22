@@ -50,7 +50,7 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(532, 440);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -61,7 +61,7 @@
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox2.Location = new System.Drawing.Point(624, 15);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(532, 440);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -71,7 +71,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(147, 484);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 2;
@@ -90,9 +90,13 @@
             "Gri Yap",
             "Binary Yap",
             "Sobel Kenar Uygula",
-            "Median Filtreleme Uygula"});
+            "Median Filtreleme Uygula",
+            "Sepia Filtresi",
+            "Mavi Fitreleme",
+            "Keskinleştirme",
+            "Hue Modifier Filtresi"});
             this.comboBox1.Location = new System.Drawing.Point(687, 486);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 6;
@@ -101,7 +105,7 @@
             // btn_uygula
             // 
             this.btn_uygula.Location = new System.Drawing.Point(948, 486);
-            this.btn_uygula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_uygula.Margin = new System.Windows.Forms.Padding(4);
             this.btn_uygula.Name = "btn_uygula";
             this.btn_uygula.Size = new System.Drawing.Size(100, 28);
             this.btn_uygula.TabIndex = 7;
@@ -119,7 +123,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

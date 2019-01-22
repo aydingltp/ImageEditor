@@ -127,16 +127,6 @@ namespace GoruntuIsleme
                          gri.GetPixel(i, j - 1).R * gY[1, 0] + gri.GetPixel(i, j).R * gY[1, 1] + gri.GetPixel(i, j + 1).R * gY[1, 2] +
                          gri.GetPixel(i + 1, j - 1).R * gY[2, 0] + gri.GetPixel(i + 1, j).R * gY[2, 1] + gri.GetPixel(i + 1, j + 1).R * gY[2, 2];
 
-                        //valX =
-                        // gri.GetPixel(j - 1,i-1).R * gX[0, 0] + gri.GetPixel(j,i-1).R * gX[0, 1] + gri.GetPixel(j+1,i-1).R * gX[0, 2] +
-                        // gri.GetPixel(j - 1,i).R * gX[1, 0] + gri.GetPixel(j ,i).R * gX[1, 1] + gri.GetPixel(j + 1,i).R * gX[1, 2] +
-                        // gri.GetPixel(j - 1, i +1).R * gX[2, 0] + gri.GetPixel(j, i +1).R * gX[2, 1] + gri.GetPixel(j+1, i + 1).R * gX[2, 2];
-
-                        //valY =
-                        // gri.GetPixel(j - 1, i - 1).R * gY[0, 0] + gri.GetPixel(j, i - 1).R * gY[0, 1] + gri.GetPixel(j + 1, i - 1).R * gY[0, 2] +
-                        // gri.GetPixel(j - 1, i).R * gY[1, 0] + gri.GetPixel(j, i).R * gY[1, 1] + gri.GetPixel(j+1,i).R * gY[1, 2] +
-                        // gri.GetPixel(j - 1, i + 1).R * gY[2, 0] + gri.GetPixel(j, i + 1).R * gY[2, 1] + gri.GetPixel(j + 1, i + 1).R * gY[2, 2];
-
                         gradient = (int)(Math.Abs(valX) + Math.Abs(valY));
 
                         if (gradient < 0) { gradient = 0; }
@@ -182,7 +172,52 @@ namespace GoruntuIsleme
 
                 pictureBox2.Image = median;
             }
+            if (comboBox1.SelectedIndex == 4) // Sepia Fitreleme seçildi.
+            {
+                // load an image
+                System.Drawing.Bitmap image = new Bitmap(pictureBox1.Image);
+                // create filter
+                AForge.Imaging.Filters.Sepia filter = new AForge.Imaging.Filters.Sepia();
+                // apply filter
+                System.Drawing.Bitmap newImage = filter.Apply(image);
+              
 
+                pictureBox2.Image = newImage;
+            }
+            if (comboBox1.SelectedIndex == 5) // Blur Fitreleme seçildi.
+            {
+                // load an image
+                System.Drawing.Bitmap image = new Bitmap(pictureBox1.Image);
+                // create filter
+                AForge.Imaging.Filters.Blur filter = new AForge.Imaging.Filters.Blur();
+                // apply filter
+                System.Drawing.Bitmap newImage = filter.Apply(image);
+
+
+                pictureBox2.Image = newImage;
+            }
+            if (comboBox1.SelectedIndex == 6) // Keskinleştirme Fitreleme seçildi.
+            {
+                // load an image
+                System.Drawing.Bitmap image = new Bitmap(pictureBox1.Image);
+                // create filter
+                AForge.Imaging.Filters.Sharpen filter = new AForge.Imaging.Filters.Sharpen();
+                // apply filter
+                System.Drawing.Bitmap newImage = filter.Apply(image);
+
+                pictureBox2.Image = newImage;
+            }
+            if (comboBox1.SelectedIndex == 7) // Hue Modifier Fitreleme seçildi.
+            {
+                // load an image
+                System.Drawing.Bitmap image = new Bitmap(pictureBox1.Image);
+                // create filter
+                AForge.Imaging.Filters.HueModifier filter = new AForge.Imaging.Filters.HueModifier();
+                // apply filter
+                System.Drawing.Bitmap newImage = filter.Apply(image);
+
+                pictureBox2.Image = newImage;
+            }
         }
 
         private Bitmap medianFilter(Bitmap image)
@@ -235,10 +270,9 @@ namespace GoruntuIsleme
             dizi[6] = alt;
             dizi[7] = sagalt;
 
-
             for (int k = 0; k < 8; k++)
             {
-                for (int m = k+1; m < 9; m++)
+                for (int m = k + 1; m < 9; m++)
                 {
                     if (dizi[k] < dizi[m])
                     {
@@ -249,9 +283,6 @@ namespace GoruntuIsleme
                         int temp = dizi[m];
                         dizi[m] = dizi[k];
                         dizi[k] = temp;
-
-
-
 
                     }
                 }
